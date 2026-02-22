@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="cover.css" />
   <!-- jQuery (FULL version, only once) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -18,61 +18,44 @@
   <!-- YTPlayer Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js"></script>
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    .cover-container {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Optional dark overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-  </style>
 </head>
 
 <body class="text-center text-white">
 
   <!-- Background Video -->
   <a id="bgndVideo" class="player"
-     data-property="{
-       videoURL:'-a2YujbY3_Q',
-       containment:'body',
-       autoPlay:true,
-       mute:true,
-       startAt:0,
-       opacity:1,
-       showControls:false
-     }">
-  </a>
+   data-property='{
+     "videoURL":"-a2YujbY3_Q",
+     "containment":"body",
+     "autoPlay":true,
+     "mute":true,
+     "startAt":0,
+     "opacity":1,
+     "showControls":false,
+     "loop":true,
+     "quality":"hd1080"
+   }'>
+</a>
 
   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
-      <h3>Cover</h3>
+      <h3>Now Sailing</h3>
+      <p>Mara Live Stream - <a href="https://classicmara.com">Website</a> 4000 Nautical Miles</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/diWEBqeQCqw?si=WbEYI_Q9BcA42Nsq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </header>
 
     <main role="main" class="inner cover my-auto">
-      <h1 class="cover-heading">Cover your page.</h1>
-      <p class="lead">
-        Fullscreen YouTube background powered by YTPlayer.
-      </p>
-      <a href="#" class="btn btn-lg btn-light">Learn more</a>
+        <div class="container">
+            <h1 class="cover-heading">Sail Monitor</h1>
+            <p class="lead">
+            The project focuses on using AIS vessel tracking data to improve situational awareness and navigational safety for sailors and recreational boaters crossing the Atlantic. By analyzing global maritime traffic patterns, we can identify high-traffic zones, reduce collision risks, and support safer route planning in open-ocean environments.
+            </p>
+            <!--<a href="#" class="btn btn-lg btn-light">Learn more</a>-->
+       </div>
     </main>
 
     <footer class="mt-auto">
-      <p>Bootstrap 4 Cover Template</p>
+      <p>Another <a href="https://mec-designs.com">MEC Designs</a> Project</p>
     </footer>
   </div>
 
@@ -86,6 +69,22 @@
       $("#bgndVideo").YTPlayer();
     });
   </script>
-
+<!-- Default Statcounter code for SailMonitor
+https://sailmonitor.online -->
+<script type="text/javascript">
+var sc_project=13206277; 
+var sc_invisible=1; 
+var sc_security="9253c290"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13206277/0/9253c290/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 </body>
 </html>
