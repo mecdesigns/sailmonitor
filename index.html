@@ -1,28 +1,61 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Product example · Bootstrap v5.0</title>
 
-  <title>Video Background Cover</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="cover.css" />
-  <!-- jQuery (FULL version, only once) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
-  <!-- YouTube Iframe API -->
-  <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+      crossorigin="anonymous">
 
-  <!-- YTPlayer Plugin -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js"></script>
+<!-- Optional: Simple favicon -->
+<link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/favicon.ico">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<!-- jQuery (required for YTPlayer) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-</head>
+<!-- YouTube Iframe API -->
+<script src="https://www.youtube.com/iframe_api"></script>
 
-<body class="text-center text-white">
+<!-- YTPlayer Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js"></script>
+<meta name="theme-color" content="#7952b3">
 
-  <!-- Background Video -->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
   <a id="bgndVideo" class="player"
    data-property='{
      "videoURL":"-a2YujbY3_Q",
@@ -35,56 +68,191 @@
      "loop":true,
      "quality":"hd1080"
    }'>
-</a>
+</a>  
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2" href="#" aria-label="Product">
+      <img src="sail-monitor-logo.png" alt="sail-monitor" />
+    </a>
+    <!--<a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>-->
+  </nav>
+</header>
 
-  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <h3>Now Sailing</h3>
-      <p>Mara Live Stream - <a href="https://classicmara.com">Website</a> 4000 Nautical Miles</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/diWEBqeQCqw?si=WbEYI_Q9BcA42Nsq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </header>
-
-    <main role="main" class="inner cover my-auto">
-        <div class="container">
-            <h1 class="cover-heading">Sail Monitor</h1>
-            <p class="lead">
-            The project focuses on using AIS vessel tracking data to improve situational awareness and navigational safety for sailors and recreational boaters crossing the Atlantic. By analyzing global maritime traffic patterns, we can identify high-traffic zones, reduce collision risks, and support safer route planning in open-ocean environments.
-            </p>
-            <!--<a href="#" class="btn btn-lg btn-light">Learn more</a>-->
-       </div>
-    </main>
-
-    <footer class="mt-auto">
-      <p>Another <a href="https://mec-designs.com">MEC Designs</a> Project</p>
-    </footer>
+<main>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-transparent">
+    <div class="col-md-5 p-lg-5 mx-auto my-5 text-white">
+      <h1 class="display-4 fw-normal">Sail Monitor</h1>
+      <p class="lead fw-normal">The project focuses on using AIS vessel tracking data to improve situational awareness and navigational safety for sailors and recreational boaters crossing the Atlantic. By analyzing global maritime traffic patterns, we can identify high-traffic zones, reduce collision risks, and support safer route planning in open-ocean environments.</p>
+      <!--<a class="btn btn-outline-secondary" href="#">Learn More!</a>-->
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
 
-  <!-- Initialize Video -->
-  <script>
-    $(document).ready(function () {
-      $("#bgndVideo").YTPlayer();
-    });
-  </script>
-<!-- Default Statcounter code for SailMonitor
-https://sailmonitor.online -->
-<script type="text/javascript">
-var sc_project=13206277; 
-var sc_invisible=1; 
-var sc_security="9253c290"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/13206277/0/9253c290/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
-</body>
-</html>
+  <!-- Column 1 -->
+  <div class="bg-transparent me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Show Girl</h2>
+      <p>
+        Mara Live Tracking -
+        <a href="https://www.predictwind.com/tracking/ShowGirl?tab=boat">
+          Predict Wind
+        </a> Navigation
+      </p>
+
+      <div class="ratio" style="--bs-aspect-ratio: 75%;">
+        <iframe src="https://www.predictwind.com/tracking/ShowGirl?tab=boat" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="bg-transparent me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Classic Mara Live</h2>
+      <p>
+        Mara Live Stream -
+        <a href="https://classicmara.com">Website</a>
+      </p>
+
+      <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.youtube.com/embed/g-2chkSATMo?autoplay=1&mute=1&playsinline=1&rel=0"
+            title="Classic Mara Live Stream"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+     </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-transparent me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">24/7 Live Stream</h2>
+        <p>Rough Inlets & Big Waves</p>
+        <div class="ratio ratio-16x9">
+            <iframe 
+                src="https://www.youtube.com/embed/diWEBqeQCqw"
+                title="YouTube video player"
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+    </div>
+    <div class="bg-transparent me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">marinetraffic.com</h2>
+        <p class="lead">Up to date traffic within the Atlantic region.</p>
+        <div class="ratio ratio-16x9">
+            <iframe
+                src="https://www.marinetraffic.com/en/ais/embed/zoom:5/centery:32.9/centerx:-37.2/maptype:0/shownames:false/"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>-->
+</main>
+
+<footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <img src="sail-monitor-logo.png" alt="sail-monitor" />
+      <small class="d-block mb-3 text-muted">© 2017–2021</small>
+    </div>
+    <div class="col-6 col-md">
+      <!--<h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Cool stuff</a></li>
+        <li><a class="link-secondary" href="#">Random feature</a></li>
+        <li><a class="link-secondary" href="#">Team feature</a></li>
+        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+        <li><a class="link-secondary" href="#">Another one</a></li>
+        <li><a class="link-secondary" href="#">Last time</a></li>
+      </ul>-->
+    </div>
+    <div class="col-6 col-md">
+      <!--<h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Resource name</a></li>
+        <li><a class="link-secondary" href="#">Resource</a></li>
+        <li><a class="link-secondary" href="#">Another resource</a></li>
+        <li><a class="link-secondary" href="#">Final resource</a></li>
+      </ul>-->
+    </div>
+    <div class="col-6 col-md">
+      <!--<h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Business</a></li>
+        <li><a class="link-secondary" href="#">Education</a></li>
+        <li><a class="link-secondary" href="#">Government</a></li>
+        <li><a class="link-secondary" href="#">Gaming</a></li>
+      </ul>-->
+    </div>
+    <div class="col-6 col-md">
+      <!--<h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Team</a></li>
+        <li><a class="link-secondary" href="#">Locations</a></li>
+        <li><a class="link-secondary" href="#">Privacy</a></li>
+        <li><a class="link-secondary" href="#">Terms</a></li>
+      </ul>-->
+    </div>
+  </div>
+</footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function () {
+            $("#bgndVideo").YTPlayer();
+        });
+        </script>
+</body></html>
