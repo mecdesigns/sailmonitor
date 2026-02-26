@@ -94,3 +94,21 @@
   .mbYTP_wrapper {
     z-index: 0 !important;
   }
+  .overlay {
+    position: absolute;     /* sit on top of the video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* black with 40% opacity */
+    z-index: 1;             /* behind your text */
+}
+
+/* Ensure your text sits above the overlay */
+.position-relative > .col-md-5 {
+    position: relative;
+    z-index: 2;
+}
+.white-text {
+  text-shadow: 2px 2px 2px #000;
+}
