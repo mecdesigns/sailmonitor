@@ -92,7 +92,6 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
-        <p>Join Mara</p>
         <div class="ratio ratio-16x9">
           <div id="classic-mara-live">
               
@@ -198,92 +197,86 @@
         });
 </script>
   <!-- Your Script to Fetch Streams -->
-  <script>
-async function fetchStreams() {
-  const heroContainer = document.querySelector("#classic-mara-live");
-  const listContainer = document.getElementById("streams");
+<script>
+      $(document).ready(function () {
+        $("#bgndVideo").YTPlayer();
+      });
 
-  listContainer.innerHTML = "Loading live streams..."; // Show loading message
+      async function fetchStreams() {
+        const heroContainer = document.querySelector("#classic-mara-live");
+        const listContainer = document.getElementById("streams");
 
-  try {
-    const response = await fetch("https://api.sailmonitor.online/streams");
-    const data = await response.json();
+        listContainer.innerHTML = "Loading live streams...";
 
-    const featured = data.featured;
-    const streams = data.streams || [];
+        try {
+          const response = await fetch("https://api.sailmonitor.online/streams");
+          const data = await response.json();
 
-    // =============================
-    // FEATURED (Classic Mara)
-    // =============================
-    if (featured) {
-      const viewers = featured.concurrent_viewers
-        ? parseInt(featured.concurrent_viewers).toLocaleString()
-        : "0";
+          const featured = data.featured;
+          const streams = data.streams || [];
 
-      heroContainer.innerHTML = `
-        <h2 class="display-5">Classic Mara Live</h2>
-        <p>🔴 ${viewers} watching</p>
-        <div class="ratio ratio-16x9">
-          <iframe 
-            src="https://www.youtube.com/embed/${featured.video_id}?autoplay=1&mute=1&rel=0&modestbranding=1"
-            allow="autoplay"
-            allowfullscreen>
-          </iframe>
-        </div>
-      `;
-    } else {
-      heroContainer.innerHTML = `
-        <h2 class="display-5">Classic Mara</h2>
-        <p>Currently Offline</p>
-      `;
-    }
+          // =============================
+          // FEATURED (Classic Mara)
+          // =============================
+          if (featured) {
+            const viewers = featured.concurrent_viewers ? parseInt(featured.concurrent_viewers).toLocaleString() : "0";
+            heroContainer.innerHTML = `
+              <h2 class="display-5">Classic Mara Live</h2>
+              <p>🔴 ${viewers} watching</p>
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/${featured.video_id}?autoplay=1&mute=1&rel=0&modestbranding=1"
+                  allow="autoplay"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `;
+          } else {
+            heroContainer.innerHTML = `
+              <h2 class="display-5">Classic Mara</h2>
+              <p>Currently Offline</p>
+            `;
+          }
 
-    // =============================
-    // OTHER STREAMS
-    // =============================
-    if (!streams.length) {
-      listContainer.innerHTML = "<p>No additional sailing streams live.</p>";
-      return;
-    }
+          // =============================
+          // OTHER STREAMS
+          // =============================
+          if (!streams.length) {
+            listContainer.innerHTML = "<p>No additional sailing streams live.</p>";
+            return;
+          }
 
-    listContainer.innerHTML = ""; // Clear loading text and add streams
+          listContainer.innerHTML = "";
 
-    streams.forEach(stream => {
-      const viewers = stream.concurrent_viewers
-        ? parseInt(stream.concurrent_viewers).toLocaleString()
-        : "0";
+          streams.forEach(stream => {
+            const viewers = stream.concurrent_viewers ? parseInt(stream.concurrent_viewers).toLocaleString() : "0";
 
-      const col = document.createElement("div");
-      col.className = "col"; // Responsive columns for streams
+            const col = document.createElement("div");
+            col.className = "text-white";
 
-      col.innerHTML = `
-        <div class="card text-white bg-transparent mb-3">
-          <img src="${stream.thumbnail}" class="card-img-top" alt="Stream Thumbnail">
-          <div class="card-body">
-            <h5 class="card-title">${stream.title}</h5>
-            <p class="card-text"><strong>${stream.channel}</strong></p>
-            <p class="card-text">🔴 ${viewers} watching</p>
-            <div class="ratio ratio-16x9">
-              <iframe 
-                src="https://www.youtube.com/embed/${stream.video_id}?autoplay=1&mute=1&rel=0&modestbranding=1"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-      `;
-      
-      listContainer.appendChild(col); // Append each stream to the container
-    });
+            col.innerHTML = `
+              <h5>${stream.title}</h5>
+              <p><strong>${stream.channel}</strong></p>
+              <p>🔴 ${viewers} watching</p>
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/${stream.video_id}"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            `;
 
-  } catch (err) {
-    console.error(err);
-    listContainer.innerHTML = "Error loading streams."; // Show error if the fetch fails
-  }
-}
+            listContainer.appendChild(col);
+          });
 
-fetchStreams(); // Call function to fetch and display the streams
-</script>
+        } catch (err) {
+          console.error(err);
+          listContainer.innerHTML = "Error loading streams.";
+        }
+      }
+
+      fetchStreams();
+    </script>
 <script> async function fetchStreams() { const heroContainer = document.querySelector("#classic-mara-live"); const listContainer = document.getElementById("streams"); listContainer.innerHTML = "Loading live streams..."; try { const response = await fetch("https://api.sailmonitor.online/streams"); const data = await response.json(); const featured = data.featured; const streams = data.streams || []; // ============================= // FEATURED (Classic Mara) // ============================= if (featured) { const viewers = featured.concurrent_viewers ? parseInt(featured.concurrent_viewers).toLocaleString() : "0"; heroContainer.innerHTML = <h2 class="display-5">Classic Mara Live</h2> <p>🔴 ${viewers} watching</p> <div class="ratio ratio-16x9"> <iframe src="https://www.youtube.com/embed/${featured.video_id}?autoplay=1&mute=1&rel=0&modestbranding=1" allow="autoplay" allowfullscreen> </iframe> </div> ; } else { heroContainer.innerHTML = <h2 class="display-5">Classic Mara</h2> <p>Currently Offline</p> ; } // ============================= // OTHER STREAMS // ============================= if (!streams.length) { listContainer.innerHTML = "<p>No additional sailing streams live.</p>"; return; } listContainer.innerHTML = ""; streams.forEach(stream => { const viewers = stream.concurrent_viewers ? parseInt(stream.concurrent_viewers).toLocaleString() : "0"; const col = document.createElement("div"); col.className = "text-white"; col.innerHTML = <h5>${stream.title}</h5> <p><strong>${stream.channel}</strong></p> <p>🔴 ${viewers} watching</p> <div class="ratio ratio-16x9"> <iframe src="https://www.youtube.com/embed/${stream.video_id}" allowfullscreen> </iframe> </div> ; listContainer.appendChild(col); }); } catch (err) { console.error(err); listContainer.innerHTML = "Error loading streams."; } } fetchStreams(); </script>
 <!-- Default Statcounter code for SailMonitor
 https://sailmonitor.online -->
