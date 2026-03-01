@@ -253,10 +253,10 @@ async function fetchStreams() {
         : "0";
 
       const col = document.createElement("div");
-      col.className = "col-xs-12 col-md-6"; // Responsive columns for streams
+      col.className = "col"; // Responsive columns for streams
 
       col.innerHTML = `
-        <div class="card text-white bg-dark mb-3">
+        <div class="card text-white bg-transparent mb-3">
           <img src="${stream.thumbnail}" class="card-img-top" alt="Stream Thumbnail">
           <div class="card-body">
             <h5 class="card-title">${stream.title}</h5>
