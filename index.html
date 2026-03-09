@@ -88,17 +88,31 @@
   </header>
 
 <main class="container my-4">
-
-  <!-- STATIC FEATURED (temporary) -->
-  <div id="lauren" class="mb-5">
-    <h2>Lauren Landers Sailing</h2>
-    <h4>I sailed SOLO from Panama to French Polynesia!</h4>
-    <div class="ratio ratio-16x9 mb-3">
-      <iframe src="https://www.youtube.com/embed/e0M6w_vJe4g"
-              allowfullscreen></iframe>
+  <div class="row">
+    <h2>Featured Video</h2>
+    <div class="col-xs-12 col-md-6">
+      <!-- STATIC FEATURED (temporary) -->
+      <div id="classic-mara-live" class="mb-5">
+        <div class="ratio ratio-16x9 mb-3"></div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <p>Mara Live Tracking - <a href="https://www.predictwind.com/tracking/ShowGirl?tab=boat" class="text-white">Predict Wind</a> Navigation</p>
+      <div class="ratio ratio-16x9">
+        <iframe  
+              src="https://www.predictwind.com/tracking/ShowGirl?tab=boat" 
+              width="100%" 
+              height="250" 
+              frameborder="0"
+              allowfullscreen>
+          </iframe>
+      </div>
+    </div>
+    <div class="col-12">
+      <p><img src="star-link.png" style="width:175px;height:auto;" alt="starlink" /><span style="size:32px;">STARLINK COVERAGE MAP</span></p>
+      <img src="Starlink-tracking-map2.jpg" style="width:100%;height:auto;"alt="starlink" />
     </div>
   </div>
-
   <!-- STREAMS GRID -->
   <div id="streams" class="row g-4">
     <div class="col-md-6">
@@ -152,7 +166,7 @@ async function fetchFeeds() {
     if (featuredContainer && streamsData.featured) {
       const f = streamsData.featured;
       featuredContainer.innerHTML = `
-        <h2>Classic Mara Live</h2>
+        <h3>Norwegian Girl Sailing Across the Atlantic Ocean</h3>
         <div class="ratio ratio-16x9 mb-3">
           <iframe src="https://www.youtube.com/embed/${f.video_id}?autoplay=1&mute=1"
                   allowfullscreen></iframe>
