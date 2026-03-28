@@ -105,8 +105,10 @@
       </a>
       </p>
       <!-- STATIC FEATURED (temporary) -->
-      <div id="classic-mara-live" class="mb-5">
-
+      <div id="live" class="mb-5">
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/3ECgDytyXQs?si=jy0QA7zryIR1c4V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
    <div class="col-xs-12 col-md-4">
@@ -123,7 +125,7 @@
         padding: 5px 25px;" a href="https://www.youtube.com/@ClassicMara" target="_blank">Subscribe Today!
       </a>
       </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/4RuofeLoRW0?si=mD3QI6-8F_M_dH7S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/4RuofeLoRW0?si=mD3QI6-8F_M_dH7S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>-
     <div class="col-12 col-md-4">
       <p><img src="star-link.png" style="width:175px;height:auto;" alt="starlink" /><span style="size:32px;">STARLINK Internet Supported - STARLINK COVERAGE MAP</span></p>
@@ -232,9 +234,7 @@ async function fetchFeeds() {
     if (featuredContainer && streamsData.featured) {
       const f = streamsData.featured;
       featuredContainer.innerHTML = `
-        <div class="ratio ratio-16x9 mb-3">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/3ECgDytyXQs?si=jy0QA7zryIR1c4V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        
       `;
       if (volumeBtn) volumeBtn.style.display = "inline-block";
     }
